@@ -1,0 +1,11 @@
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\bin\Debug\netcoreapp2.0\ChefsnDishes.deps.json
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\bin\Debug\netcoreapp2.0\ChefsnDishes.runtimeconfig.json
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\bin\Debug\netcoreapp2.0\ChefsnDishes.runtimeconfig.dev.json
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\bin\Debug\netcoreapp2.0\ChefsnDishes.dll
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\bin\Debug\netcoreapp2.0\ChefsnDishes.pdb
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\obj\Debug\netcoreapp2.0\ChefsnDishes.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\obj\Debug\netcoreapp2.0\ChefsnDishes.csproj.CoreCompileInputs.cache
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\obj\Debug\netcoreapp2.0\ChefsnDishes.AssemblyInfoInputs.cache
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\obj\Debug\netcoreapp2.0\ChefsnDishes.AssemblyInfo.cs
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\obj\Debug\netcoreapp2.0\ChefsnDishes.dll
+C:\Users\Kyle\Documents\C#-.NET\ChefsnDishes\obj\Debug\netcoreapp2.0\ChefsnDishes.pdb
