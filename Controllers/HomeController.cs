@@ -89,7 +89,7 @@ namespace ChefsnDishes.Controllers
             {
                 List<Chef> AllChefs = dbContext.Chefs.ToList();
                 ViewBag.allchefs = AllChefs;
-                return View("AddDishView", dish);
+                return View("AddDish", dish);
             }
         }
     }
