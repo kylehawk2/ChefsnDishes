@@ -21,28 +21,76 @@ namespace ChefsnDishes.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            List<Chef> AllChefs = dbContext.Chef.Include(dish => dish.Dishes).ToList();
+            List<Chef> AllChefs = dbContext.Chefs.Include(dish => dish.Dishes).ToList();
             ViewBag.allchefs = AllChefs;
             return View();
         }
 
-        public IActionResult About()
+        [HttpGet]
+        [Route("Dishes")]
+        public IActionResult Dishes()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            List<Dish> AllDishes = dbContext.Dishes.Include(chef => chef.Creator).ToList();
+            ViewBag.alldishes = AllDishes;
+            return View("Dishes");
         }
+        [HttpGet]
+        [Route("AddChefView")]
 
-        public IActionResult Contact()
+        public IActionResult AddChefView()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return View("AddChef");
         }
-
-        public IActionResult Error()
+        [HttpGet]
+        [Route("AddDishView")]
+        public IActionResult AddDishView()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            List<Chef> AllChefs = dbContext.Chefs.ToList();
+            ViewBag.allchefs = AllChefs;
+            return View("AddDish");
+        }
+        [HttpPost]
+        [Route("AddChef")]
+        public IActionResult AddChef(Chef chef)
+        {
+            if(ModelState.IsValid)
+            {
+                if(chef.Birthday >= DateTime.Today)
+                {
+                    ModelState.AddModelError("Birthday", "Birthday must be from the past!");
+                    return View("AddChef");
+                }
+                Chef newChef = new Chef
+                {
+                    First_Name = chef.First_Name,
+                    Last_Name = chef.Last_Name,
+                    Birthday = chef.Birthday,
+                };
+                dbContext.Add(newChef);
+                dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("AddChef");
+            }
+        }
+        [HttpPost]
+        [Route("AddDish")]
+        public IActionResult AddDish(Dish dish)
+        {
+            if(ModelState.IsValid)
+            {
+                dbContext.Add(dish);
+                dbContext.SaveChanges();
+                return RedirectToAction("AddDishView");
+            }
+            else
+            {
+                List<Chef> AllChefs = dbContext.Chefs.ToList();
+                ViewBag.allchefs = AllChefs;
+                return View("AddDishView", dish);
+            }
         }
     }
 }

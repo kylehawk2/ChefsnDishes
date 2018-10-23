@@ -5,7 +5,7 @@ namespace ChefsnDishes.Models
     public class ChefDishContext : DbContext
     {
         public ChefDishContext (DbContextOptions<ChefDishContext> options) : base(options) { }
-        public DbSet<Chef> Chef {get;set;}
-        public DbSet<Dish> Dish {get;set;}
+        public DbSet<Chef> Chefs {get;set;}
+        public DbSet<Dish> Dishes {get;set;}
     }
 }

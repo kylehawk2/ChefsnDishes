@@ -1,5 +1,5 @@
 ﻿@using ChefsnDishes.Models
-@model Chef
+@model Dish
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,39 +11,36 @@
 </head>
 <body>
     <h1><a href="/">Chefs</a> | <a href="/Dishes">Dishes</a></h1>
-    <a href="/AddChefView">Add a new Chef!</a>
-    <h2>Check our roster of Chefs!</h2>
+    <h1>Dishes</h1>
+    <a href="/AddDishView">Add a Dish</a>
+    <h2>Yum, take a look at our tasty dishes!</h2>
     <p>____________________________________________________________________________________________________________________________________________________</p>
     <table class="table col-sm-8 mx-auto">
         <thead>
             <tr>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Age</th>
-                <th scope="col"># of Dishes</th>
+                <th scope="col">Name</th>
+                <th scope="col">Chef</th>
+                <th scope="col">Tastiness</th>
+                <th scope="col">Calories</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach(Chef chef in  @ViewBag.allchefs)
-            {
-                <tr>
-                    <td>@chef.First_Name</td>
-                    <td>@chef.Last_Name</td>
-                    <td>@chef.Age</td>
-                    <td>@chef.Dishes.Count</td>
-                </tr>
-            }
+    <tbody>
+    
+        @foreach(Dish dish in @ViewBag.alldishes)
+        {
             <tr>
-        <th scope="row"></th>
-            <td></td>
-            <td></td>
-        </tr>
+                <td>@dish.Name</td>
+                <td>@dish.Creator.First_Name</td>
+                <td>@dish.Tastiness</td>
+                <td>@dish.Calories</td>
+            </tr>
+        }
         <tr>
             <th scope="row"></th>
             <td></td>
             <td></td>
         </tr>
-        </tbody>
-    </table>
+    </tbody>
+</table>
 </body>
 </html>

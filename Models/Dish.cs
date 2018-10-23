@@ -15,6 +15,9 @@ namespace ChefsnDishes.Models
         [Range(0,5000, ErrorMessage="Calories cannot exceed 5000 or negative.")]
         public int Calories {get;set;}
         [Required]
+        [Range(0,10)]
+        public int Tastiness {get;set;}
+        [Required]
         [MinLength(5)]
         public string Description {get;set;}
         public DateTime CreatedAt {get;set;} = DateTime.Now;
